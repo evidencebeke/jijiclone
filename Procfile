@@ -1,0 +1,1 @@
+web: guinicorn backend.wsgi --log-file -
