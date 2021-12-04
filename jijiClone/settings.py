@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-# import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1-@-6f3k1l5k(m1y$d0!s!0pun91)e$n9w@-!uas(&=^&zuwo2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', '.herokuapp.com', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'drf_yasg',
     'corsheaders',
-    # 'django_heroku',
+    'django_heroku',
 
     
 
@@ -152,7 +152,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
